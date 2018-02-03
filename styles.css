@@ -1,0 +1,162 @@
+button, div:not(.exempt) {
+  padding: 0;
+  margin: 0;
+  height: 12.5%;
+  width: 12.5%;
+  /* flex-grow: 1; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2em;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 0;
+}
+button {
+  outline: 0;
+  background-color: lightblue;
+}
+div:not(.exempt) {
+  background-color: grey;
+}
+body {
+  font-family: "Kaushan Script", cursive;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+#root {
+   width: 85vh;
+   height: 85vh;
+   display: flex;
+   flex-wrap: wrap;
+}
+#winScreen {
+  width: 36em;
+  height: 36em;
+  padding: 2em;
+  border: black 5px solid;
+  background: lightblue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#winScreen span {
+  font-family: inherit;
+  font-size: 10em;
+}
+.hidden {
+  display: none !important;
+}
+nav, aside {
+  height: 20em;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#turn {
+   text-align: center;
+   font-size: 2em;
+   padding-top: 1%;
+}
+.link {
+  text-align: center;
+   border: 3px black solid;
+   padding: 1%;
+   font-size: 2em;
+   margin: 5%;
+   background-color: lightblue;
+   color: black;
+}
+.link:hover {
+  background: white;
+}
+.openMoves {
+  border: 0.25em white solid;
+}
+.selected {
+   background: lightyellow;
+}
+
+@media only screen and (max-width: 800px) {
+   html {
+      font-size: 8px;
+   }
+}
+a {
+  text-decoration: none;
+}
+#captured {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  font-size: 2em;
+  height: 30%;
+}
+#captured span {
+  color: white;
+}
+#captured div {
+  width: 100%;
+}
+.blackDraught, .whiteDraught {
+  position: relative;
+  color: grey;
+  width: 7vh;
+  height: 7vh;
+  background: black;
+  border-radius: 100%;
+  border: 0.1em white solid;
+}
+.whiteDraught {
+  background: red;
+  color: #ff8a8a;
+}
+
+span {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Berkshire Swash", monospace;
+}
+#turn, #captured {
+  margin: 5%;
+  padding: 1%;
+}
+@media only screen and (orientation: portrait) and (max-width: 1026px){
+   body {
+      flex-direction: column;
+      /* justify-content: flex-start; */
+   }
+   nav, aside {
+      width: 100%;
+      height: 13%;
+      flex-direction: row;
+   }
+   aside {
+     height: 23%;
+   }
+   nav p, nav a, #turn, #captured {
+     width: 30vw;
+   }
+   .blackDraught, .whiteDraught {
+     width: 5vh;
+     height: 5vh;
+   }
+   .link {
+     margin: 2%;
+   }
+   #root {
+      width: 90vw;
+      height: 90vw;
+   }
+}
