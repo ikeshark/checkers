@@ -127,9 +127,6 @@ function Piece(isBlack, i) {
 }
 Piece.prototype.displayMe = function() {
   let piece = document.createElement('span');
-  // i feel like this isn't necessary to input positions
-  // when i use this i should already have the piece object
-  // so i should just be able to say: this.position / this.isKing
    if (this.isBlack) {
      piece.classList.add('blackDraught');
    } else {
@@ -151,7 +148,6 @@ Piece.prototype.startMove = function() {
    });
    // selecting the square that was clicked
    board[this.value].classList.add('selected');
-   // how do i know where the open moves are?
    let openMoves = piece.openMoves;
    openMoves.forEach(position => {
       board[position].classList.add('openMoves');
@@ -187,7 +183,7 @@ Piece.prototype.finishMove = function() {
    let animation = span.animate(movement, {
      duration: 200,
    });
-   // remove stuff during (before?) animation
+   // remove stuff during animation
    myPieces.forEach((piece, i) => {
       piece.openMoves = [];
       piece.jumpees = [];
@@ -199,6 +195,7 @@ Piece.prototype.finishMove = function() {
       elem.removeEventListener('click', piece.finishMove);
    });
    animation.onfinish = passTurn;
+   
    function passTurn() {
       oldSpace.innerHTML = '';
       piece.position = newPosition;
