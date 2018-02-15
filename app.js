@@ -195,7 +195,6 @@ Piece.prototype.finishMove = function() {
       elem.removeEventListener('click', piece.finishMove);
    });
    animation.onfinish = passTurn;
-   
    function passTurn() {
       oldSpace.innerHTML = '';
       piece.position = newPosition;
@@ -461,17 +460,3 @@ function newGame() {
 const newGameButton = document.getElementById('newGame');
 newGameButton.addEventListener('click', newGame);
 turn();
-
-// to do:
-
-// clean up code
-// look for draws
-   // or for loses caused by no legal moves
-// better graphics than 'W' and 'B'
-// logic in find moves needs to be checked
-// make checker board actual squares
-// new game button
-
-// bonus features
-   // list moves
-   // show jumped, 'dead' tokens

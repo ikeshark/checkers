@@ -1,9 +1,44 @@
+/*         */
+/* General */
+/*         */
+
+body {
+  font-family: "Kaushan Script", cursive;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+}
+span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Berkshire Swash", monospace;
+}
+
+/*               */
+/* Checker Board */
+/*               */
+
+/* Container */
+#root {
+   width: 85vh;
+   height: 85vh;
+   display: flex;
+   flex-wrap: wrap;
+}
+/* Squares */
 button, div:not(.exempt) {
   padding: 0;
   margin: 0;
   height: 12.5%;
   width: 12.5%;
-  /* flex-grow: 1; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,25 +55,27 @@ button {
 div:not(.exempt) {
   background-color: grey;
 }
-body {
-  font-family: "Kaushan Script", cursive;
-  margin: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  overflow: hidden;
-  align-items: center;
-  justify-content: center;
+.blackDraught, .whiteDraught {
+  position: relative;
+  color: grey;
+  width: 7vh;
+  height: 7vh;
+  background: black;
+  border-radius: 100%;
+  border: 0.1em white solid;
 }
-#root {
-   width: 85vh;
-   height: 85vh;
-   display: flex;
-   flex-wrap: wrap;
+.whiteDraught {
+  background: red;
+  color: #ff8a8a;
 }
+
+/*                 */
+/* Everything Else */
+/*                 */
+
 #winScreen {
-  width: 36em;
-  height: 36em;
+  width: 85vh;
+  height: 8vh;
   padding: 2em;
   border: black 5px solid;
   background: lightblue;
@@ -51,9 +88,6 @@ body {
   font-family: inherit;
   font-size: 10em;
 }
-.hidden {
-  display: none !important;
-}
 nav, aside {
   height: 20em;
   width: 25%;
@@ -61,11 +95,7 @@ nav, aside {
   flex-direction: column;
   justify-content: space-between;
 }
-#turn {
-   text-align: center;
-   font-size: 2em;
-   padding-top: 1%;
-}
+
 .link {
   text-align: center;
    border: 3px black solid;
@@ -78,20 +108,14 @@ nav, aside {
 .link:hover {
   background: white;
 }
-.openMoves {
-  border: 0.25em white solid;
+#turn {
+   text-align: center;
+   font-size: 2em;
+   padding-top: 1%;
 }
-.selected {
-   background: lightyellow;
-}
-
-@media only screen and (max-width: 800px) {
-   html {
-      font-size: 8px;
-   }
-}
-a {
-  text-decoration: none;
+#turn, #captured {
+  margin: 5%;
+  padding: 1%;
 }
 #captured {
   display: flex;
@@ -107,35 +131,34 @@ a {
 #captured div {
   width: 100%;
 }
-.blackDraught, .whiteDraught {
-  position: relative;
-  color: grey;
-  width: 7vh;
-  height: 7vh;
-  background: black;
-  border-radius: 100%;
-  border: 0.1em white solid;
+
+/*       */
+/* State */
+/*       */
+
+.hidden {
+  display: none !important;
 }
-.whiteDraught {
-  background: red;
-  color: #ff8a8a;
+.openMoves {
+  border: 0.25em white solid;
+}
+.selected {
+   background: lightyellow;
 }
 
-span {
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Berkshire Swash", monospace;
+/*               */
+/* Media Queries */
+/*               */
+
+@media only screen and (max-width: 800px) {
+   html {
+      font-size: 8px;
+   }
 }
-#turn, #captured {
-  margin: 5%;
-  padding: 1%;
-}
+
 @media only screen and (orientation: portrait) and (max-width: 1026px){
    body {
       flex-direction: column;
-      /* justify-content: flex-start; */
    }
    nav, aside {
       width: 100%;
