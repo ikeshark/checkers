@@ -75,7 +75,7 @@ div:not(.exempt) {
 
 #winScreen {
   width: 85vh;
-  height: 8vh;
+  height: 85vh;
   padding: 2em;
   border: black 5px solid;
   background: lightblue;
